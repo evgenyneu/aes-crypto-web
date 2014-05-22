@@ -3,5 +3,11 @@
 html, body { height: 100%; }
 
 body {
-  font-family: Verdana, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+input, textarea {
+  border-radius: $borderRadius;
+  border: 1px solid $shade70;
+  padding: $marginSmall;
 }

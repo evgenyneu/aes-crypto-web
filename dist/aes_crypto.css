@@ -331,27 +331,26 @@ html, body {
   height: 100%; }
 
 body {
-  font-family: Verdana, Arial, sans-serif; }
+  font-family: Helvetica, Arial, sans-serif; }
+
+input, textarea {
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  padding: 8px; }
 
 .layout-outer {
   height: 100%;
-  background-color: gray;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 800px;
-  margin: 0 auto; }
-
-.Content {
-  background-color: blue;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1; }
+  flex-direction: column; }
 
 .Navbar {
+  color: #fff;
+  background-color: #6fd274;
+  padding: 8px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -360,11 +359,26 @@ body {
   justify-content: space-between;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
-  padding: 8px;
-  color: #fff;
-  background-color: #6fd274; }
+  align-items: center; }
 
 .Navbar-logo {
   width: 20px; }
 
+
+.Content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding: 8px; }
+
+.PasswordGroup {
+  padding-bottom: 8px; }
+
+.Message {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
