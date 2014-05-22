@@ -8,13 +8,17 @@
     connect     = require('gulp-connect'),
     concat      = require('gulp-concat'),
     sass        = require('gulp-sass'),
-    Q = require('q'),
+    Q           = require('q'),
+    prefix      = require('gulp-autoprefixer'),
 
     paths = {
-      scripts: ['src/**/*.js'],
-      styles: ['src/*.scss'],
+      scripts: ['src/js/**/*.js'],
+      styles: [
+        'app/bower_components/normalize.css/normalize.css',
+        'src/css/app.scss'],
       dest: 'dist',
       destFileName: 'aes_crypto.js',
+      destFileNameCSS: 'aes_crypto.css',
       app: ['./app/*.html', './app/scripts/*.js']
     };
 
@@ -35,7 +39,9 @@
 
   gulp.task('sass', function () {
     gulp.src(paths.styles)
+      .pipe(concat(paths.destFileNameCSS))
       .pipe(sass())
+      .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
       .pipe(gulp.dest(paths.dest));
   });
 
@@ -90,7 +96,7 @@
   });
 
   gulp.task('watch_source', function() {
-    gulp.watch(paths.scripts.concat(paths.styles), ['html']);
+    gulp.watch(paths.scripts.concat('src/css/**/*'), ['scripts_min', 'html']);
   });
 
   gulp.task('build', ['scripts', 'scripts_min', 'sass']);
