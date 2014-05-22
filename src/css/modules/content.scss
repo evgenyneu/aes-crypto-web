@@ -1,0 +1,14 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $marginSmall;
+}
+
+.PasswordGroup {
+  padding-bottom: $marginSmall;
+}
+
+.Message {
+  flex-grow: 1;
+}
