@@ -1,0 +1,51 @@
+{
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "es3": true,
+  "immed": true,
+  "indent": 2,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "trailing": true,
+  "browser": true,
+  "jquery":true,
+  "globals": {
+    // Browser
+    "console": false,
+    "alert": false,
+
+    "_": false,
+    "google": false,
+
+    // Jasmine
+    "describe": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "it": false,
+    "expect": false,
+    "spyOn": false,
+    "jasmine": false,
+    "loadFixtures": false,
+
+    // AngularJS
+    "angular": false,
+    "$provide": false,
+    "inject": false,
+    "module": false,
+
+    // Google Analytics
+    "ga": false,
+
+    // Node
+    "require": false,
+    "process": false,
+
+    // Protractor
+    "browser": false,
+    "element": false,
+    "by": false
+  }
+}

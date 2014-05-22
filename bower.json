@@ -1,0 +1,19 @@
+{
+  "name": "aes_crypto_web",
+  "dependencies": {},
+  "devDependencies": {
+    "es5-shim": "~2.3.0"
+  },
+  "ignore": [
+    ".*",
+    "app",
+    "test",
+    "src",
+    "karma*",
+    "package.json",
+    "gulpfile.js",
+    "protractor.conf.js",
+    "tests_e2e"
+  ],
+  "private": true
+}
