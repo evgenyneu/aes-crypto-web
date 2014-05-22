@@ -364,6 +364,9 @@ input, textarea {
 .Navbar-logo {
   width: 20px; }
 
+.Navbar-button {
+  color: #fff;
+  text-decoration: none; }
 
 .Content {
   display: -webkit-flex;
