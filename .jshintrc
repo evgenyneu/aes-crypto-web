@@ -30,15 +30,6 @@
     "jasmine": false,
     "loadFixtures": false,
 
-    // AngularJS
-    "angular": false,
-    "$provide": false,
-    "inject": false,
-    "module": false,
-
-    // Google Analytics
-    "ga": false,
-
     // Node
     "require": false,
     "process": false,
@@ -46,6 +37,10 @@
     // Protractor
     "browser": false,
     "element": false,
-    "by": false
+    "by": false,
+
+    // aesCrypto
+
+    "aesCrypto": false
   }
 }
