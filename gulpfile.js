@@ -13,6 +13,7 @@
     usemin      = require('gulp-usemin'),
     rev         = require('gulp-rev'),
     clean       = require('gulp-clean'),
+    open        = require('gulp-open'),
 
     paths = {
       scripts: ['src/js/**/*.js'],
@@ -68,20 +69,14 @@
     connect.server({
       root: ['app', paths.temp],
       port: 1336,
-      livereload: true,
-      open: {
-        browser: 'Google Chrome'
-      }
+      livereload: true
     });
   });
 
-  gulp.task('dist_connect', ['build'], function(){
+  gulp.task('connectDist', ['build'], function(){
     connect.server({
       root: ['dist'],
-      port: 1337,
-      open: {
-        browser: 'Google Chrome'
-      }
+      port: 1337
     });
   });
 
@@ -112,11 +107,21 @@
       .pipe(clean());
   });
 
+  gulp.task('open', ['connect', 'watch'], function(){
+    gulp.src('app/index.html')
+    .pipe(open('', { url: 'http://localhost:1336' }));
+  });
+
+  gulp.task('openDist', ['connectDist'], function(){
+    gulp.src('app/index.html')
+    .pipe(open('', { url: 'http://localhost:1337' }));
+  });
+
   gulp.task('build', ['usemin', 'copy_to_dist']);
 
-  gulp.task('serve', ['connect']);
+  gulp.task('serve', ['open']);
 
-  gulp.task('serve_dist', ['dist_connect']);
+  gulp.task('serveDist', ['openDist']);
 
   gulp.task('default', ['build']);
 })();

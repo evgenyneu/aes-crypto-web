@@ -12,7 +12,7 @@
 
 
   encryptButton.onclick = function() {
-    if (!messageField.value || !passwordField.value) { return; }
+    if (!messageField.value || !passwordField.value) { return false; }
 
     var encrypted = aesCrypto.encrypt(
       trimString(messageField.value),
@@ -24,7 +24,7 @@
   };
 
   decryptButton.onclick = function() {
-    if (!messageField.value || !passwordField.value) { return; }
+    if (!messageField.value || !passwordField.value) { return false; }
 
     var decrypted = aesCrypto.decrypt(
       trimString(messageField.value),
