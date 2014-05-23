@@ -3,7 +3,6 @@
   var gulp = require('gulp'),
 
     uglify      = require('gulp-uglify'),
-    rename      = require('gulp-rename'),
     karma       = require('gulp-karma'),
     connect     = require('gulp-connect'),
     concat      = require('gulp-concat'),
@@ -24,37 +23,12 @@
       app: ['./app/*.html', './app/scripts/*.js']
     };
 
-  gulp.task('scripts', function() {
-    return gulp.src(paths.scripts)
-      .pipe(concat(paths.destFileName))
-      .pipe(rename({extname: '.js'}))
-      .pipe(gulp.dest(paths.dest + '/js') );
-  });
-
-  gulp.task('scripts_min', function() {
-    return gulp.src(paths.scripts)
-      .pipe(concat(paths.destFileName))
-      .pipe(uglify())
-      .pipe(rename({extname: '.min.js'}))
-      .pipe(gulp.dest('dist' + '/js'));
-  });
-
   gulp.task('sass', ['copy_to_dist'], function () {
     return gulp.src('app/scss/app.scss')
       .pipe(concat(paths.destFileNameCSS))
       .pipe(sass())
       .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
       .pipe(gulp.dest(paths.temp + '/css'));
-  });
-
-  gulp.task('sass_min', function () {
-    return gulp.src(paths.styles)
-      .pipe(concat(paths.destFileNameCSS))
-      .pipe(sass())
-      .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-      .pipe(minifyCss({keepBreaks:true}))
-      .pipe(rename({extname: '.min.css'}))
-      .pipe(gulp.dest(paths.dest + '/css'));
   });
 
   gulp.task('test', function() {
@@ -90,23 +64,26 @@
     return deferred.promise;
   });
 
-  gulp.task('connect', ['sass'], connect.server({
-    root: ['app', paths.temp],
-    port: 1336,
-    livereload: true,
-    open: {
-      browser: 'Google Chrome'
-    }
-  }));
+  gulp.task('connect', ['sass'], function() {
+    connect.server({
+      root: ['app', paths.temp],
+      port: 1336,
+      livereload: true,
+      open: {
+        browser: 'Google Chrome'
+      }
+    });
+  });
 
-  gulp.task('connect_dist', ['build'], connect.server({
-    root: ['dist'],
-    port: 1336,
-    livereload: true,
-    open: {
-      browser: 'Google Chrome'
-    }
-  }));
+  gulp.task('dist_connect', ['build'], function(){
+    connect.server({
+      root: ['dist'],
+      port: 1337,
+      open: {
+        browser: 'Google Chrome'
+      }
+    });
+  });
 
   gulp.task('html', ['sass'], function() {
     gulp.src('./app/*.html').pipe(connect.reload());
@@ -137,8 +114,9 @@
 
   gulp.task('build', ['usemin', 'copy_to_dist']);
 
-  gulp.task('serve', ['connect', 'watch']);
-  gulp.task('serve_dist', ['connect_dist']);
+  gulp.task('serve', ['connect']);
+
+  gulp.task('serve_dist', ['dist_connect']);
 
   gulp.task('default', ['build']);
 })();
