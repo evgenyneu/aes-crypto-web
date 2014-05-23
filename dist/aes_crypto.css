@@ -52,6 +52,9 @@ a {
   color: #66c16a;
   text-decoration: none; }
 
+img {
+  width: 100%; }
+
 .layout-outer {
   height: 100%;
   display: -webkit-flex;
@@ -68,17 +71,23 @@ a {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  min-height: 53px; }
+
+.Navbar-child {
+  width: 33.333%; }
+  .Navbar-child:last-child {
+    text-align: right; }
 
 .Navbar-logoLink {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
@@ -129,9 +138,23 @@ a {
 .HelpLink-image {
   width: 30px; }
 
+.Help-outer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
 .Help {
   padding: 8px;
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
   line-height: 1.3; }
+
+.Help-logo {
+  max-width: 180px; }
+
+.Help-drawing {
+  max-width: 400px; }

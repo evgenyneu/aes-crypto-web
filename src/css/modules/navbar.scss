@@ -4,12 +4,18 @@
   padding: $marginSmall;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  min-height: 53px;
+}
+
+.Navbar-child {
+  width: 33.333%;
+  &:last-child { text-align: right; }
 }
 
 .Navbar-logoLink {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
