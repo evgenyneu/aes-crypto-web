@@ -13,9 +13,7 @@
 
     paths = {
       scripts: ['src/js/**/*.js'],
-      styles: [
-        'app/bower_components/normalize.css/normalize.css',
-        'src/css/app.scss'],
+      styles: ['src/css/app.scss'],
       dest: 'dist',
       destFileName: 'aes_crypto.js',
       destFileNameCSS: 'aes_crypto.css',
