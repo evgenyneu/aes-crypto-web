@@ -40,7 +40,7 @@
   });
 
   gulp.task('sass', function () {
-    gulp.src('app/css/app.scss')
+    gulp.src('app/scss/app.scss')
       .pipe(concat(paths.destFileNameCSS))
       .pipe(sass())
       .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
