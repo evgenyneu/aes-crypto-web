@@ -9,7 +9,6 @@ Source code for AES Crypto web app.
 After cloning the github repo into a dir:
 
     npm install
-    bower install
 
 Test:
 
@@ -19,7 +18,7 @@ Demo in browser:
 
     gulp serve
 
-or
+Demo distributive version:
 
     gulp serveDist
 
