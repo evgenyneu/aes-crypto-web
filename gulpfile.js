@@ -40,7 +40,7 @@
       }));
   });
 
-  gulp.task('e2e_test', ['connect'], function(cb) {
+  gulp.task('e2e_test', ['connectDist'], function(cb) {
     var deferred = Q.defer();
 
     var spawn = require('child_process').spawn;
