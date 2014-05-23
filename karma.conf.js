@@ -12,8 +12,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/bower_components/es5-shim/es5-shim.min.js',
-      'src/**/*.js',
+      'app/js/**/*.js',
       'test/**/*spec.js'
     ],
 

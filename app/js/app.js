@@ -10,6 +10,7 @@
   var encryptButton = document.getElementById('EncryptButton');
   var decryptButton = document.getElementById('DecryptButton');
 
+  if (!encryptButton) { return; }
 
   encryptButton.onclick = function() {
     if (!messageField.value || !passwordField.value) { return false; }
