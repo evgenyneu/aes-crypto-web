@@ -10,7 +10,10 @@
     sass        = require('gulp-sass'),
     Q           = require('q'),
     prefix      = require('gulp-autoprefixer'),
-    minifyCSS = require('gulp-minify-css'),
+    minifyCSS   = require('gulp-minify-css'),
+    usemin      = require('gulp-usemin'),
+    rev         = require('gulp-rev'),
+    clean       = require('gulp-clean'),
 
     paths = {
       scripts: ['src/js/**/*.js'],
@@ -106,6 +109,19 @@
 
   gulp.task('watch_source', function() {
     gulp.watch(paths.scripts.concat('src/css/**/*'), ['scripts_min', 'html']);
+  });
+
+  gulp.task('usemin', ['clean'], function() {
+    gulp.src('./app/*.html')
+      .pipe(usemin({
+        js: [uglify(), rev()]
+      }))
+      .pipe(gulp.dest(paths.dest));
+  });
+
+  gulp.task('clean', function () {
+    return gulp.src(paths.dest, {read: false})
+      .pipe(clean());
   });
 
   gulp.task('build', ['scripts', 'scripts_min', 'sass', 'sass_min']);
