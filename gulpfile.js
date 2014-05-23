@@ -122,7 +122,7 @@
   });
 
   gulp.task('usemin', ['sass'], function() {
-    return gulp.src(['app/**/index.html', '!app/bower_components/**/*'])
+    return gulp.src(['./app/**/index.html', '!app/bower_components/**/*'])
       .pipe(usemin({
         css: [minifyCss({keepBreaks:true}), rev()],
         js: [uglify(), rev()]
