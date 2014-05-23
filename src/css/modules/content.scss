@@ -6,9 +6,20 @@
 }
 
 .PasswordGroup {
+  display: flex;
   padding-bottom: $marginSmall;
 }
 
-.Message {
-  flex-grow: 1;
+.MessageField { flex-grow: 1; }
+
+// Password group
+
+.PasswordField { flex-grow: 1; }
+
+.HelpLink {
+  display: flex;
+  align-items: center;
+  margin-left: $marginSmall;
 }
+
+.HelpLink-image { width: 30px; }

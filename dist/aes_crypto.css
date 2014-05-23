@@ -361,12 +361,21 @@ input, textarea {
   -ms-flex-align: center;
   align-items: center; }
 
+.Navbar-logoLink {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
 .Navbar-logo {
   width: 20px; }
 
 .Navbar-button {
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  padding: 8px 0; }
 
 .Content {
   display: -webkit-flex;
@@ -379,9 +388,29 @@ input, textarea {
   padding: 8px; }
 
 .PasswordGroup {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   padding-bottom: 8px; }
 
-.Message {
+.MessageField {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1; }
+
+.PasswordField {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
+
+.HelpLink {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 8px; }
+
+.HelpLink-image {
+  width: 30px; }
