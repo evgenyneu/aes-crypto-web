@@ -2,13 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AES Crypto</title>
-    <meta name="description" content="Encrypt messages with Advanced Encryption Standard on Android, iOS and Web.">
+    <title>AES Crypto: text encryption app</title>
+    <meta name="description" content="Encrypt messages with Advanced Encryption Standard.">
     <meta name="viewport" content="width=device-width">
     <link href="aes_crypto.css" rel="stylesheet" type="text/css" />
   </head>
-  <body ng-app='ParentApp' ng-controller='parentAppController'>
+  <body>
     <div class='layout-outer'>
       <div class='Navbar'>
         <a id='DecryptButton' class='Navbar-button' href='#'>Decrypt</a>
@@ -23,10 +22,6 @@
         <textarea id='MessageField' class='MessageField' placeholder='Message' tabindex='2'></textarea>
       </div>
     </div>
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <![endif]-->
     <script src="aes_crypto.js"></script>
   </body>
 </html>
