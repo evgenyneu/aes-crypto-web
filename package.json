@@ -12,6 +12,7 @@
     "gulp-rename": "~1.1.0",
     "gulp-rev": "^0.4.0",
     "gulp-sass": "~0.7.1",
+    "gulp-shell": "^0.2.5",
     "gulp-uglify": "~0.2.1",
     "gulp-usemin": "^0.3.4",
     "install": "~0.1.7",

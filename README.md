@@ -18,10 +18,14 @@ Demo in browser:
 
     gulp serve
 
-Demo distributive version:
+Demo distributive:
 
     gulp serveDist
 
 Build:
 
     gulp
+
+Deploy:
+
+    gulp deploy

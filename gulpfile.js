@@ -13,6 +13,7 @@
     rev         = require('gulp-rev'),
     clean       = require('gulp-clean'),
     open        = require('gulp-open'),
+    shell       = require('gulp-shell'),
 
     paths = {
       scripts: ['src/js/**/*.js'],
@@ -90,6 +91,11 @@
     gulp.src('app/index.html')
     .pipe(open('', { url: 'http://localhost:1337' }));
   });
+
+  gulp.task('deploy', ['build'], shell.task([
+    'rsync -rvz dist/ pi:aescrypto.com',
+    'echo world'
+  ]));
 
   gulp.task('build', ['usemin', 'copy_to_dist']);
 
