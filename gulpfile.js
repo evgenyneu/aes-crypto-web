@@ -10,6 +10,7 @@
     sass        = require('gulp-sass'),
     Q           = require('q'),
     prefix      = require('gulp-autoprefixer'),
+    minifyCSS = require('gulp-minify-css'),
 
     paths = {
       scripts: ['src/js/**/*.js'],
@@ -24,7 +25,7 @@
     return gulp.src(paths.scripts)
       .pipe(concat(paths.destFileName))
       .pipe(rename({extname: '.js'}))
-      .pipe(gulp.dest(paths.dest));
+      .pipe(gulp.dest(paths.dest + '/js') );
   });
 
   gulp.task('scripts_min', function() {
@@ -32,7 +33,7 @@
       .pipe(concat(paths.destFileName))
       .pipe(uglify())
       .pipe(rename({extname: '.min.js'}))
-      .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest('dist' + '/js'));
   });
 
   gulp.task('sass', function () {
@@ -40,7 +41,17 @@
       .pipe(concat(paths.destFileNameCSS))
       .pipe(sass())
       .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-      .pipe(gulp.dest(paths.dest));
+      .pipe(gulp.dest(paths.dest + '/css'));
+  });
+
+  gulp.task('sass_min', function () {
+    gulp.src(paths.styles)
+      .pipe(concat(paths.destFileNameCSS))
+      .pipe(sass())
+      .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+      .pipe(minifyCSS({keepBreaks:true}))
+      .pipe(rename({extname: '.min.css'}))
+      .pipe(gulp.dest(paths.dest + '/css'));
   });
 
   gulp.task('test', function() {
@@ -97,7 +108,7 @@
     gulp.watch(paths.scripts.concat('src/css/**/*'), ['scripts_min', 'html']);
   });
 
-  gulp.task('build', ['scripts', 'scripts_min', 'sass']);
+  gulp.task('build', ['scripts', 'scripts_min', 'sass', 'sass_min']);
   gulp.task('serve', ['connect', 'watch', 'watch_source']);
   gulp.task('default', ['build']);
 })();
