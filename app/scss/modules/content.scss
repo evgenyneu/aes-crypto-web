@@ -1,0 +1,25 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $marginSmall;
+}
+
+.PasswordGroup {
+  display: flex;
+  padding-bottom: $marginSmall;
+}
+
+.MessageField { flex-grow: 1; }
+
+// Password group
+
+.PasswordField { flex-grow: 1; }
+
+.HelpLink {
+  display: flex;
+  align-items: center;
+  margin-left: $marginSmall;
+}
+
+.HelpLink-image { width: 30px; }

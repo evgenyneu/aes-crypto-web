@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  color: $shade30;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+input, textarea {
+  border-radius: $borderRadius;
+  border: 1px solid $shade70;
+  padding: $marginSmall;
+}
+
+a {
+  color: $colorLink;
+  text-decoration: none;
+}
+
+img { width: 100% }

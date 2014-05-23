@@ -10,7 +10,7 @@
     sass        = require('gulp-sass'),
     Q           = require('q'),
     prefix      = require('gulp-autoprefixer'),
-    minifyCSS   = require('gulp-minify-css'),
+    minifyCss   = require('gulp-minify-css'),
     usemin      = require('gulp-usemin'),
     rev         = require('gulp-rev'),
     clean       = require('gulp-clean'),
@@ -18,7 +18,7 @@
     paths = {
       scripts: ['src/js/**/*.js'],
       dest: 'dist',
-      temp: 'tmp',
+      temp: '_tmp',
       destFileName: 'aes_crypto.js',
       destFileNameCSS: 'aes_crypto.css',
       app: ['./app/*.html', './app/scripts/*.js']
@@ -39,8 +39,8 @@
       .pipe(gulp.dest('dist' + '/js'));
   });
 
-  gulp.task('sass', function () {
-    gulp.src('app/scss/app.scss')
+  gulp.task('sass', ['clean'], function () {
+    return gulp.src('app/scss/app.scss')
       .pipe(concat(paths.destFileNameCSS))
       .pipe(sass())
       .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
@@ -48,11 +48,11 @@
   });
 
   gulp.task('sass_min', function () {
-    gulp.src(paths.styles)
+    return gulp.src(paths.styles)
       .pipe(concat(paths.destFileNameCSS))
       .pipe(sass())
       .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-      .pipe(minifyCSS({keepBreaks:true}))
+      .pipe(minifyCss({keepBreaks:true}))
       .pipe(rename({extname: '.min.css'}))
       .pipe(gulp.dest(paths.dest + '/css'));
   });
@@ -111,16 +111,17 @@
     gulp.watch(paths.scripts.concat('src/css/**/*'), ['scripts_min', 'html']);
   });
 
-  gulp.task('usemin', ['clean', 'sass'], function() {
-    gulp.src('./app/*.html')
+  gulp.task('usemin', ['sass'], function() {
+    return gulp.src('./app/*.html')
       .pipe(usemin({
+        css: [minifyCss({keepBreaks:true}), rev()],
         js: [uglify(), rev()]
       }))
       .pipe(gulp.dest(paths.dest));
   });
 
   gulp.task('clean', function () {
-    return gulp.src(paths.dest, {read: false})
+    return gulp.src([paths.dest, paths.temp], {read: false})
       .pipe(clean());
   });
 
