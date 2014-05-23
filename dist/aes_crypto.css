@@ -37,7 +37,8 @@ textarea {
   box-sizing: border-box; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  color: #333; }
 
 body {
   font-family: Helvetica, Arial, sans-serif; }
@@ -46,6 +47,10 @@ input, textarea {
   border-radius: 3px;
   border: 1px solid #ddd;
   padding: 8px; }
+
+a {
+  color: #66c16a;
+  text-decoration: none; }
 
 .layout-outer {
   height: 100%;
@@ -123,3 +128,10 @@ input, textarea {
 
 .HelpLink-image {
   width: 30px; }
+
+.Help {
+  padding: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.3; }
