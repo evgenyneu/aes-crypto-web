@@ -17,8 +17,8 @@
 
     paths = {
       scripts: ['src/js/**/*.js'],
-      styles: ['src/css/app.scss'],
       dest: 'dist',
+      temp: 'tmp',
       destFileName: 'aes_crypto.js',
       destFileNameCSS: 'aes_crypto.css',
       app: ['./app/*.html', './app/scripts/*.js']
@@ -40,11 +40,11 @@
   });
 
   gulp.task('sass', function () {
-    gulp.src(paths.styles)
+    gulp.src('app/css/app.scss')
       .pipe(concat(paths.destFileNameCSS))
       .pipe(sass())
       .pipe(prefix(['last 1 version', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-      .pipe(gulp.dest(paths.dest + '/css'));
+      .pipe(gulp.dest(paths.temp + '/css'));
   });
 
   gulp.task('sass_min', function () {
@@ -111,7 +111,7 @@
     gulp.watch(paths.scripts.concat('src/css/**/*'), ['scripts_min', 'html']);
   });
 
-  gulp.task('usemin', ['clean'], function() {
+  gulp.task('usemin', ['clean', 'sass'], function() {
     gulp.src('./app/*.html')
       .pipe(usemin({
         js: [uglify(), rev()]
