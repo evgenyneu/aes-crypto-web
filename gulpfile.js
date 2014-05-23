@@ -7,7 +7,6 @@
     connect     = require('gulp-connect'),
     concat      = require('gulp-concat'),
     sass        = require('gulp-sass'),
-    Q           = require('q'),
     prefix      = require('gulp-autoprefixer'),
     minifyCss   = require('gulp-minify-css'),
     usemin      = require('gulp-usemin'),
@@ -38,31 +37,6 @@
         configFile: 'karma.conf.js',
         action: 'run'
       }));
-  });
-
-  gulp.task('e2e_test', ['connectDist'], function(cb) {
-    var deferred = Q.defer();
-
-    var spawn = require('child_process').spawn;
-    var ls    = spawn('./node_modules/protractor/bin/protractor', ['protractor.conf.js']);
-    ls.stdout.on('data', function (data) {
-      console.log('' + data);
-    });
-
-    ls.stderr.on('data', function (data) {
-      console.log('Test error: ' + data);
-    });
-
-    ls.on('close', function (code) {
-      if (code === 0) {
-        deferred.resolve();
-        process.exit(1);
-      } else {
-        cb('Test failed');
-      }
-    });
-
-    return deferred.promise;
   });
 
   gulp.task('connect', ['sass'], function() {
