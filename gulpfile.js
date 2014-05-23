@@ -90,8 +90,8 @@
     return deferred.promise;
   });
 
-  gulp.task('connect', ['build'], connect.server({
-    root: ['app', 'dist'],
+  gulp.task('connect', ['sass'], connect.server({
+    root: ['app', paths.temp],
     port: 1336,
     livereload: true,
     open: {
@@ -99,16 +99,12 @@
     }
   }));
 
-  gulp.task('html', ['build'], function() {
+  gulp.task('html', ['sass'], function() {
     gulp.src('./app/*.html').pipe(connect.reload());
   });
 
-  gulp.task('watch', function() {
-    gulp.watch(paths.app, ['html']);
-  });
-
-  gulp.task('watch_source', function() {
-    gulp.watch(paths.scripts.concat('src/css/**/*'), ['scripts_min', 'html']);
+  gulp.task('watch', ['sass'], function() {
+    gulp.watch(['app/*.html', 'app/help/*.html', 'app/scss/**/*', 'app/js/**/*'], ['html']);
   });
 
   gulp.task('usemin', ['sass'], function() {
@@ -125,7 +121,7 @@
       .pipe(clean());
   });
 
-  gulp.task('build', ['scripts', 'scripts_min', 'sass', 'sass_min']);
-  gulp.task('serve', ['connect', 'watch', 'watch_source']);
+  // gulp.task('build', ['scripts', 'scripts_min', 'sass', 'sass_min']);
+  gulp.task('serve', ['connect', 'watch']);
   gulp.task('default', ['build']);
 })();
