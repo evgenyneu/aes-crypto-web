@@ -1,8 +1,11 @@
 # Overview
 
-Source code for AES Crypto web app.
+Source code for AES Crypto web app [aescrypto.com](http://aescrypto.com).
 
-[aescrypto.com](http://aescrypto.com)
+AES Crypto encrypts text messages with Advanced Encryption Standard.
+
+<img src='https://raw.githubusercontent.com/evgenyneu/aes-crypto-web/master/Graphics/screenshots/screenshot.png' width='321' alt='AES Crypto'>
+
 
 ## Development
 
