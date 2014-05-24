@@ -10,13 +10,19 @@
 
 .Navbar-child {
   width: 33.333%;
-  &:last-child { text-align: right; }
+
+  // no flex fallback
+  display: inline-block;
+  vertical-align: top;
 }
 
 .Navbar-logoLink {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  // no flex fallback
+  text-align: center;
 }
 
 .Navbar-logo { width: 20px; }

@@ -5,21 +5,36 @@
   padding: $marginSmall;
 }
 
+
+.MessageField {
+  flex-grow: 1;
+
+  // no flex fallback
+  width: 100%;
+  min-height: 50%;
+}
+
+// Password group
+
 .PasswordGroup {
   display: flex;
   padding-bottom: $marginSmall;
 }
 
-.MessageField { flex-grow: 1; }
+.PasswordField {
+  flex-grow: 1;
 
-// Password group
-
-.PasswordField { flex-grow: 1; }
+  // no flex fallback
+  min-width: 70%;
+}
 
 .HelpLink {
   display: flex;
   align-items: center;
   margin-left: $marginSmall;
+
+  // no flex fallback
+  vertical-align: bottom;
 }
 
 .HelpLink-image { width: 30px; }
