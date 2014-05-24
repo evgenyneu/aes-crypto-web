@@ -3,18 +3,15 @@
   display: flex;
   flex-direction: column;
   padding: $marginSmall;
-
-  // no flex
-  height: 70%;
 }
 
 
 .MessageField {
   flex-grow: 1;
+  min-height: 100px; // make sure virtual keyboard does not squish it
 
   // no flex
   width: 100%;
-  height: 50%;
 }
 
 // Password group
@@ -22,6 +19,7 @@
 .PasswordGroup {
   display: flex;
   padding-bottom: $marginSmall;
+  min-height: 40px; // make sure virtual keyboard does not squish it
 }
 
 .PasswordField {
