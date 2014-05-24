@@ -64,7 +64,7 @@
   });
 
   gulp.task('copy_to_dist', ['clean'], function(){
-    gulp.src(['app/images/**/*'], {base: 'app/'})
+    gulp.src(['app/images/**/*', 'app/favicon.ico'], {base: 'app/'})
     .pipe(gulp.dest(paths.dest));
   });
 
