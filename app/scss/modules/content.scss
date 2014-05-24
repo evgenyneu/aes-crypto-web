@@ -1,17 +1,20 @@
 .Content {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
   padding: $marginSmall;
+
+  // no flex
+  height: 70%;
 }
 
 
 .MessageField {
   flex-grow: 1;
 
-  // no flex fallback
+  // no flex
   width: 100%;
-  min-height: 50%;
+  height: 50%;
 }
 
 // Password group
@@ -24,7 +27,7 @@
 .PasswordField {
   flex-grow: 1;
 
-  // no flex fallback
+  // no flex
   min-width: 70%;
 }
 
@@ -33,7 +36,7 @@
   align-items: center;
   margin-left: $marginSmall;
 
-  // no flex fallback
+  // no flex
   vertical-align: bottom;
 }
 

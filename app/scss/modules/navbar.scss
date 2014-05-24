@@ -11,7 +11,7 @@
 .Navbar-child {
   width: 33.333%;
 
-  // no flex fallback
+  // no flex
   display: inline-block;
   vertical-align: top;
 }
@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: center;
 
-  // no flex fallback
+  // no flex
   text-align: center;
 }
 
