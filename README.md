@@ -32,7 +32,7 @@ Deploy:
 
     gulp deploy
 
-## Source code for Android and iOS apps
+## Android and iOS apps
 
 Source code for Android and iOS AES Crypto apps is available for your enjoyment.
 
