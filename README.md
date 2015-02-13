@@ -34,8 +34,8 @@ Deploy:
 
 ## Source code for Android and iOS apps
 
-Source code for Android and iOS apps is available.
-
-iOS: [https://github.com/evgenyneu/aes-text-encryption-ios](https://github.com/evgenyneu/aes-text-encryption-ios)
+Source code for Android and iOS AES Crypto apps is available.
 
 Android: [https://github.com/evgenyneu/aes-crypto-android](https://github.com/evgenyneu/aes-crypto-android)
+
+iOS: [https://github.com/evgenyneu/aes-text-encryption-ios](https://github.com/evgenyneu/aes-text-encryption-ios)
