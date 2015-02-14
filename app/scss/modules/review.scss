@@ -1,0 +1,13 @@
+.Review + .Review {
+  margin-top: $marginXXX;
+}
+
+.Review-header { margin: 0; }
+.Review-body { margin-top: 0; }
+
+.Review-stars {
+  color: $colorReviewStars;
+  font-size: 1.2em;
+}
+
+.Review-by { margin: 0; }
