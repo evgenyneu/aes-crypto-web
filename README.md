@@ -6,6 +6,13 @@ AES Crypto encrypts text messages with Advanced Encryption Standard.
 
 <img src='https://raw.githubusercontent.com/evgenyneu/aes-crypto-web/master/Graphics/screenshots/screenshot.png' width='321' alt='AES Crypto'>
 
+
+## Host AES Crypto on your server
+
+Use [this single self-contained html file](http://aescrypto.com/redist/aes_crypto.html) and host it on your server. You can also save it to a local folder and open it in the web browser.
+
+
+
 ## Development
 
 After cloning the github repo into a dir:
@@ -39,3 +46,8 @@ Source code for Android and iOS AES Crypto apps is available for your enjoyment.
 **Android**: [https://github.com/evgenyneu/aes-crypto-android](https://github.com/evgenyneu/aes-crypto-android)
 
 **iOS**: [https://github.com/evgenyneu/aes-text-encryption-ios](https://github.com/evgenyneu/aes-text-encryption-ios)
+
+
+## License
+
+Moa is released under the [MIT License](LICENSE).
