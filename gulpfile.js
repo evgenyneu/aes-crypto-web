@@ -42,7 +42,7 @@
 
   gulp.task('connect', ['sass'], function() {
     connect.server({
-      root: ['app', paths.temp],
+      root: ['app', paths.temp, paths.dest],
       port: 1336,
       livereload: true
     });
@@ -64,6 +64,9 @@
   });
 
   gulp.task('copy_to_dist', ['clean'], function(){
+    gulp.src(['redist/aes_crypto.html'])
+    .pipe(gulp.dest(paths.dest + '/redist'));
+
     gulp.src(['app/images/**/*', 'app/favicon.ico'], {base: 'app/'})
     .pipe(gulp.dest(paths.dest));
   });
