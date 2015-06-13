@@ -49,6 +49,10 @@ Source code for Android and iOS AES Crypto apps is available for your enjoyment.
 
 **iOS**: [https://github.com/evgenyneu/aes-text-encryption-ios](https://github.com/evgenyneu/aes-text-encryption-ios)
 
+## Credits
+
+CryptoJS library was used for encryption: https://code.google.com/p/crypto-js
+
 
 ## License
 
