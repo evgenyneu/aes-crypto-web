@@ -19,23 +19,23 @@ After cloning the github repo into a dir:
 
     npm install
 
-Test:
+##### Test
 
     ./node_modules/gulp/bin/gulp.js test
 
-Demo in browser:
+#####  Demo in browser
 
     ./node_modules/gulp/bin/gulp.js serve
 
-Demo distributive:
+#####  Demo distributive
 
     ./node_modules/gulp/bin/gulp.js serveDist
 
-Build:
+#####  Build
 
     ./node_modules/gulp/bin/gulp.js
 
-Deploy:
+#####  Deploy
 
     ./node_modules/gulp/bin/gulp.js deploy
 
