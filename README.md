@@ -21,23 +21,23 @@ After cloning the github repo into a dir:
 
 Test:
 
-    gulp test
+    ./node_modules/gulp/bin/gulp.js test
 
 Demo in browser:
 
-    gulp serve
+    ./node_modules/gulp/bin/gulp.js serve
 
 Demo distributive:
 
-    gulp serveDist
+    ./node_modules/gulp/bin/gulp.js serveDist
 
 Build:
 
-    gulp
+    ./node_modules/gulp/bin/gulp.js
 
 Deploy:
 
-    gulp deploy
+    ./node_modules/gulp/bin/gulp.js deploy
 
 
 
