@@ -96,7 +96,8 @@
   });
 
   gulp.task('deploy', ['build'], shell.task([
-    'rsync -rvz dist/ pi:aescrypto.com',
+    // 'rsync -rvz dist/ pi:aescrypto.com',
+    'rsync -rvz dist/ arvixe:public_html/aescrypto.com',
     'echo world'
   ]));
 
