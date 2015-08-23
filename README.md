@@ -9,7 +9,7 @@ AES Crypto encrypts text messages with Advanced Encryption Standard.
 
 ## Host AES Crypto on your server
 
-Use [this single self-contained html file](http://aescrypto.com/redist/aes_crypto.html) and host it on your server. You can also save it to a local folder and open it in the web browser for offline use.
+Host this [this html file](https://github.com/evgenyneu/aes-crypto-web/blob/master/redist/aes_crypto.html) on your web server or save it to a local folder for offline use.
 
 
 
@@ -19,25 +19,25 @@ After cloning the github repo into a dir:
 
     npm install
 
-Test:
+##### Test
 
-    gulp test
+    ./node_modules/gulp/bin/gulp.js test
 
-Demo in browser:
+#####  Demo in browser
 
-    gulp serve
+    ./node_modules/gulp/bin/gulp.js serve
 
-Demo distributive:
+#####  Demo distributive
 
-    gulp serveDist
+    ./node_modules/gulp/bin/gulp.js serveDist
 
-Build:
+#####  Build
 
-    gulp
+    ./node_modules/gulp/bin/gulp.js
 
-Deploy:
+#####  Deploy
 
-    gulp deploy
+    ./node_modules/gulp/bin/gulp.js deploy
 
 
 
