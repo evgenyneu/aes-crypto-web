@@ -11,7 +11,7 @@
     "gulp-open": "^0.2.8",
     "gulp-rename": "~1.1.0",
     "gulp-rev": "^0.4.0",
-    "gulp-sass": "~0.7.1",
+    "gulp-sass": "^2.1.1",
     "gulp-shell": "^0.2.5",
     "gulp-uglify": "~0.2.1",
     "gulp-usemin": "^0.3.4",
